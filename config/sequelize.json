@@ -1,9 +1,9 @@
 {
   "lambda": {
-    "username": "<username>",
-    "password": "<password>",
-    "database": "<database_name>",
-    "host": "<database_endpoint>",
+    "username": "ileadmin",
+    "password": "ileadmin",
+    "database": "ile",
+    "host": "ile.cztvwcvkllxf.eu-central-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "dockerlambda": {

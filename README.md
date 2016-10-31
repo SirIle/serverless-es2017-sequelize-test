@@ -49,6 +49,17 @@ npm run local -- '{"path":{"userid":"user1"}}'
 npm run remote -- '{"path":{"userid":"user1"}}'
 ~~~
 
+### Running tests
+
+The test setup first starts the local database instance and transpiles so that
+everything should be up to date. After that it executes the tests in the
+*test* folder. It runs the local Docker based instance of the function against
+the local database. The tests can be run with
+
+~~~bash
+npm test
+~~~
+
 ## Running on AWS Lambda
 
 ### Prerequisites
