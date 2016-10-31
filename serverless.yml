@@ -1,0 +1,23 @@
+service: serverless-es2017-sequelize-test
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+  stage: dev
+  region: eu-central-1
+functions:
+  users:
+    handler: services/users.users
+    exclude:
+      - '*.es6'
+      - '.git'
+    events:
+      - http:
+          method: get
+          path: users/{userid}
+          integration: lambda
+          request:
+            parameters:
+              paths:
+                userid: true
+          cors: true

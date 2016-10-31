@@ -1,0 +1,30 @@
+{
+  "lambda": {
+    "username": "<username>",
+    "password": "<password>",
+    "database": "<database_name>",
+    "host": "<database_endpoint>",
+    "dialect": "mysql"
+  },
+  "dockerlambda": {
+    "username": "root",
+    "password": "ile",
+    "database": "ile",
+    "host": "mariadb",
+    "dialect": "mysql"
+  },
+  "shell": {
+    "username": "root",
+    "password": "ile",
+    "database": "ile",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "<username>",
+    "password": "<password>",
+    "database": "<database_name>",
+    "host": "<database_endpoint>",
+    "dialect": "mysql"
+  }
+}

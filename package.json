@@ -1,0 +1,26 @@
+{
+  "name": "serverless-es2017-sequelize-test",
+  "version": "1.0.0",
+  "description": "AWS Lambda test with ES2017",
+  "main": "index.js",
+  "scripts": {
+    "transpile": "babel models/*.es6 -d .;babel services/*.es6 -d .",
+    "localdb": "NODE_ENV=shell scripts/setup-db.sh",
+    "resetremotedb": "babel-node scripts/initdb.es6",
+    "resetlocaldb": "NODE_ENV=shell babel-node scripts/initdb.es6",
+    "local": "npm run transpile;docker run --rm -v \"$PWD\":/var/task -e NODE_ENV=dockerlambda --network lambda lambci/lambda services/users.users",
+    "remote": "npm run transpile;docker run --rm -v \"$PWD\":/var/task lambci/lambda services/users.users",
+    "deploy": "npm install;npm run transpile;npm prune --production;serverless deploy"
+  },
+  "author": "Ilkka Anttonen",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-es2017": "^6.16.0"
+  },
+  "dependencies": {
+    "mysql": "^2.11.1",
+    "sequelize": "^3.24.3"
+  }
+}
