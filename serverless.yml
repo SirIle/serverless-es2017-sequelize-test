@@ -5,12 +5,21 @@ provider:
   runtime: nodejs4.3
   stage: dev
   region: eu-central-1
+
+package:
+  exclude:
+    - "*/*.es6"
+    - .*
+    - .git/**
+    - "*.pdf"
+    - "*.md"
+    - package.json
+    - test/**
+    - testdata/**
+    - scripts/**
 functions:
   users:
     handler: services/users.users
-    exclude:
-      - '*.es6'
-      - '.git'
     events:
       - http:
           method: get
